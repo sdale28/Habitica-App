@@ -106,9 +106,9 @@ let template = [{
   label: 'Help',
   role: 'help',
   submenu: [{
-    label: 'Learn More',
+    label: 'Report a Bug',
     click: function () {
-      electron.shell.openExternal('http://electron.atom.io')
+      electron.shell.openExternal('https://github.com/sdale28/Habitica-App/issues')
     }
   }]
 }]
@@ -149,6 +149,14 @@ if (process.platform === 'darwin') {
     submenu: [{
       label: `About ${name}`,
       role: 'about'
+    }, {
+      type: 'separator'
+    }, {
+      label: 'GitHub Repo',
+      role: 'repository',
+      click: function () {
+        electron.shell.openExternal('https://github.com/sdale28/Habitica-App')
+      }
     }, {
       type: 'separator'
     }, {

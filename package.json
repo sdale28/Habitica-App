@@ -10,15 +10,14 @@
     "dev": "electron . --debug",
     "lint": "standard | snazzy",
     "test": "mocha tests && npm run lint",
-    "pack-mac": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
+    "pack-mac": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Mac Developer: samdale496@gmail.com (63WCD743VY)' --extend-info=assets/mac/info.plist",
     "package": "npm run pack-mac",
     "mas": "./script/mas.sh",
-    "prepare-release": "npm run package",
-    "release": "node ./script/release.js"
+    "prepare-release": "npm run package"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron/electron-api-demos.git"
+    "url": "git+https://github.com/sdale28/Habitica-App.git"
   },
   "keywords": [
     "Habitica",
@@ -28,9 +27,9 @@
   "author": "Sam Dale",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron/electron-api-demos/issues"
+    "url": "https://github.com/sdale28/Habitica-App/issues"
   },
-  "homepage": "https://github.com/electron/electron-api-demos#readme",
+  "homepage": "https://github.com/sdale28/Habitica-App#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^6.0.0",

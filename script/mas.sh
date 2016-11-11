@@ -11,7 +11,7 @@ electron-packager . \
   --asar-unpack=protocol-link.html \
   --overwrite \
   --platform=mas \
-  --app-bundle-id=com.github.electron-api-demos \
+  --app-bundle-id=com.sdale.Habitica-App \
   --app-version="$npm_package_version" \
   --build-version="1.1.0" \
   --arch=x64 \
@@ -22,8 +22,8 @@ electron-packager . \
 
 APP_PATH="./out/$APP-mas-x64/$APP.app"
 RESULT_PATH="./out/$APP.pkg"
-APP_KEY="3rd Party Mac Developer Application: GitHub (VEKTX9H2N7)"
-INSTALLER_KEY="3rd Party Mac Developer Installer: GitHub (VEKTX9H2N7)"
+APP_KEY="Mac Developer: samdale496@gmail.com (63WCD743VY)"
+INSTALLER_KEY="Mac Developer: samdale496@gmail.com (63WCD743VY)"
 FRAMEWORKS_PATH="$APP_PATH/Contents/Frameworks"
 CHILD_PLIST="./assets/mac/child.plist"
 PARENT_PLIST="./assets/mac/parent.plist"

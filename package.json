@@ -1,0 +1,60 @@
+{
+  "name": "Habitica",
+  "productName": "Habitica",
+  "version": "1.0.0",
+  "description": "Habitica client for Mac.",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "lint": "standard | snazzy",
+    "test": "mocha tests && npm run lint",
+    "pack-mac": "electron-packager . --asar.unpack=protocol-link.html --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
+    "package": "npm run pack-mac",
+    "mas": "./script/mas.sh",
+    "prepare-release": "npm run package",
+    "release": "node ./script/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-api-demos.git"
+  },
+  "keywords": [
+    "Habitica",
+    "habits",
+    "motivation"
+  ],
+  "author": "Sam Dale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/electron/electron-api-demos/issues"
+  },
+  "homepage": "https://github.com/electron/electron-api-demos#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^6.0.0",
+    "devtron": "^1.3.0",
+    "electron": "^1.3.5",
+    "electron-packager": "^8.0.0",
+    "electron-winstaller": "^2.2.0",
+    "mocha": "^3.1.0",
+    "request": "^2.70.0",
+    "rimraf": "^2.5.2",
+    "signcode": "^0.5.0",
+    "snazzy": "^5.0.0",
+    "spectron": "~3.4.0",
+    "standard": "^8.2.0"
+  },
+  "dependencies": {
+    "electron-json-storage": "^2.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^7.1.0",
+    "highlight.js": "^9.3.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
+  }
+}

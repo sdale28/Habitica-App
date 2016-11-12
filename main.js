@@ -3,6 +3,10 @@ const glob = require('glob')
 const electron = require('electron')
 const autoUpdater = require('./auto-updater')
 
+// restore window size
+const windowStateKeeper = require('electron-window-state');
+//let win;
+
 const BrowserWindow = electron.BrowserWindow
 const app = electron.app
 
@@ -19,15 +23,30 @@ function initialize () {
    loadDemos()
 
    function createWindow () {
+      // Load the previous state with fallback to defaults
+      let mainWindowState = windowStateKeeper({
+        defaultWidth: 1080,
+        defaultHeight: 840
+      });
+
       var windowOptions = {
-         width: 1080,
-         minWidth: 680,
-         height: 840,
+         'x': mainWindowState.x,
+         'y': mainWindowState.y,
+         'width': mainWindowState.width,
+         'height': mainWindowState.height,
+         //width: 1080,
+         //minWidth: 680,
+         //height: 840,
          title: app.getName()
       }
 
       mainWindow = new BrowserWindow(windowOptions)
       mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
+
+      // Let us register listeners on the window, so we can update the state
+      // automatically (the listeners will be removed when the window is closed)
+      // and restore the maximized or full screen state
+      mainWindowState.manage(mainWindow);
 
       // Launch fullscreen with DevTools open, usage: npm run debug
       if (debug) {

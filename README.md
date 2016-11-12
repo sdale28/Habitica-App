@@ -12,7 +12,7 @@ To run code you need [Electron] and [Node.js] installed. Then, download zip or c
 In case you're wondering, ```npm install --save electron-window-state``` enables the window size to be restored as explained on the [Electron Window State] repo.
 This: ```npm run package``` packages the app which can then be used like a normal app. It's found in ```/Habitica-App/out```
 
-*Note: I do not claim Habitica as my own. This application is built off of [Electron], a free and open source tool created by GitHub. Specifically, this project was based largely off of the [Electron API Demos] application. My application simply displays Habitica's site (a free and open source project) as a separate application.*
+*Note: I do not claim Habitica as my own. This application is built off of [Electron], a free and open source tool created by GitHub. Specifically, this project was based largely off of the [Electron API Demos] application. My application simply displays Habitica's site (a free and open source project) as a separate application (by taking advantage of webview).*
 
 [Habitica]: <https://habitica.com/>
 [Electron]: <http://electron.atom.io/>

@@ -53,7 +53,8 @@
     "electron-shortcut-normalizer": "^1.0.0",
     "electron-window-state": "^3.1.0",
     "glob": "^7.1.0",
-    "highlight.js": "^9.3.0"
+    "highlight.js": "^9.3.0",
+    "electron": ">=7.2.4"
   },
   "standard": {
     "env": {
